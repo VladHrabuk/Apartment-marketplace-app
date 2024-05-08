@@ -1,0 +1,38 @@
+{
+  "name": "apratment-marketplace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "npx prettier . --check",
+    "format:fix": "npx prettier . --write",
+    "start:server": "nodemon .",
+    "start": "node .",
+    "debug:server": "nodemon --inspect ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/VladHrabuk/Apartment-marketplace-app.git"
+  },
+  "author": "VladHrabuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladHrabuk/Apartment-marketplace-app/issues"
+  },
+  "homepage": "https://github.com/VladHrabuk/Apartment-marketplace-app#readme",
+  "dependencies": {
+    "config": "^3.3.11",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.6.0",
+    "mongoose": "^8.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-semistandard": "^17.0.0",
+    "nodemon": "^3.1.0",
+    "prettier": "3.2.5"
+  }
+}
