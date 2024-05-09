@@ -15,14 +15,9 @@ async function getAllApartments(req, res, next) {
       filterOptions.rooms = parseInt(req.query.rooms);
     }
 
-    const page = req.query.page ? parseInt(req.query.page) : 1;
-    const limit = req.query.limit ? parseInt(req.query.limit) : 5;
-    const skip = (page - 1) * limit;
-    const apartments = await Apartment.find(filterOptions).skip(skip).limit(limit).sort(sortOptions);
+    const apartments = await Apartment.find(filterOptions).sort(sortOptions);
     const totalCount = await Apartment.countDocuments(filterOptions);
     return res.status(200).json({
-      page,
-      limit,
       totalCount,
       data: {
         apartments,

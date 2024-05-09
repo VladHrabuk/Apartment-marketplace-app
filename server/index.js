@@ -2,6 +2,7 @@ require('dotenv').config();
 const config = require('config');
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const { router: apartmentRouter } = require('./routes/apartments');
 const errorHandler = require('./middleware/errorHandler');
 const ApiError = require('./exceptions/api-error');
@@ -9,7 +10,7 @@ const ApiError = require('./exceptions/api-error');
 const server = express();
 
 server.use(express.json());
-
+server.use(cors());
 server.use('/apartments', apartmentRouter);
 
 server.all('*', async (req, res, next) => {
